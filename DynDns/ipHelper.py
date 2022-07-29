@@ -1,3 +1,5 @@
+import requests
+
 key = "YOURKEY"
 cmdAdd = "dns-add_record"
 cmdDel = "dns-remove_record"
