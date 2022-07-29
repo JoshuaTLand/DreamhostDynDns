@@ -20,7 +20,7 @@ if fileVal == "":
 
 pubVal = ipHelper.getPubIp()
 
-if pubVal == fileVal:
+if pubVal != fileVal:
     urlAdd = ipHelper.getAddUrl(pubVal)
     urlDel = ipHelper.getDelUrl(pubVal)
 
