@@ -14,9 +14,9 @@ if fileVal == "":
     if dnsVal == None:
         alerts.append("DynDns: Dns record not found after empty local file")
     else:
-        alerts.append("DynDns: Dns record file successfully saved")
         fileVal = dnsVal
         fileManager.saveVal(fileVal)
+        alerts.append("DynDns: Dns record file successfully saved")
 
 pubVal = ipHelper.getPubIp()
 
