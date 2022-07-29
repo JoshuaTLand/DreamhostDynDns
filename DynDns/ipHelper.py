@@ -28,3 +28,9 @@ def getDnsIp():
             return dnsRecord['value']
 
     return None
+
+def getAddUrl(pubVal):
+    return "https://api.dreamhost.com/?key={key}&format={format}&cmd={cmd}&type={type}&record={record}&value={value}".format(key=key, format=frmt, cmd=cmdAdd, type=recordType, record=record, value=pubVal)
+
+def getDelUrl(pubVal):
+    return "https://api.dreamhost.com/?key={key}&format={format}&cmd={cmd}&type={type}&record={record}&value={value}".format(key=key, format=frmt, cmd=cmdDel, type=recordType, record=record, value=pubVal)

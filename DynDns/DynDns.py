@@ -20,9 +20,9 @@ if fileVal == "":
 
 pubVal = ipHelper.getPubIp()
 
-if pubVal != fileVal:
-    urlAdd = "https://api.dreamhost.com/?key={key}&format={format}&cmd={cmd}&type={type}&record={record}&value={value}".format(key=key, format=frmt, cmd=cmdAdd, type=recordType, record=record, value=pubVal)
-    urlDel = "https://api.dreamhost.com/?key={key}&format={format}&cmd={cmd}&type={type}&record={record}&value={value}".format(key=key, format=frmt, cmd=cmdDel, type=recordType, record=record, value=pubVal)
+if pubVal == fileVal:
+    urlAdd = ipHelper.getAddUrl(pubVal)
+    urlDel = ipHelper.getDelUrl(pubVal)
 
     dnsVal = ipHelper.getDnsIp()
     
@@ -36,7 +36,7 @@ if pubVal != fileVal:
     if addResp['result'] != "success":
         alerts.append("DynDns: Error adding dns record")
     else:
-        alerts.append("DynDns: Dns record update: " + addResp['result'] + " - " + addResp['data'] + " to ip " + pubVal)
+        alerts.append("DynDns: Dns record update: " + addResp['result'] + " - " + addResp['data'] + " for ip " + pubVal)
         fileManager.clearFile()
 
 dscrd = discordBot()
