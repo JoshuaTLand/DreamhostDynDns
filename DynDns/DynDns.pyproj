@@ -25,6 +25,7 @@
     <Compile Include="discordBot.py" />
     <Compile Include="DynDns.py" />
     <Compile Include="fileManager.py" />
+    <Compile Include="ipHelper.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="venv\">
